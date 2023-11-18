@@ -10,7 +10,7 @@ export const accountdata = [
     balance: '12839',
   },
   {
-    accountno: 'US843443',
+    accountno: 'US841443',
     type: 'saving',
     balance: '19984',
   },
@@ -20,7 +20,7 @@ export const accountdata = [
     balance: '15489',
   },
   {
-    accountno: 'UK982343',
+    accountno: 'UK0982343',
     type: 'saving',
     balance: '15489',
   },
@@ -40,7 +40,7 @@ export const accountdata = [
     balance: '154s89',
   },
   {
-    accountno: 'US843443',
+    accountno: 'US0043443',
     type: 'saving',
     balance: '19984',
   },
@@ -50,7 +50,7 @@ export const accountdata = [
     balance: '15489',
   },
   {
-    accountno: 'UK982343',
+    accountno: 'UK82343',
     type: 'saving',
     balance: '15489',
   },

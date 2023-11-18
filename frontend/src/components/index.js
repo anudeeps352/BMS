@@ -11,3 +11,4 @@ export { default as Transaction } from './Transaction';
 export { default as TransactionContainer } from './TransactionContainer';
 export { default as FormRow } from './FormRow';
 export { default as FormRowSelect } from './FormRowSelect';
+export { default as LogoutContainer } from './LogoutContainer';

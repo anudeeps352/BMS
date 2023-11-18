@@ -5,8 +5,6 @@ import { useNavigation, Form, useNavigate, redirect } from 'react-router-dom';
 import axios from 'axios';
 
 export const action = async ({ request }) => {
-  console.log('entered');
-
   const formData = await request.formData();
   console.log(formData);
   const data = Object.fromEntries(formData);
@@ -14,8 +12,8 @@ export const action = async ({ request }) => {
 
   try {
     const resp = await axios.post('http://localhost:5000/api/userlogin', data);
-    console.log('try');
     toast.success('Login Successful');
+    localStorage.setItem('UserID', data.UserID);
     return redirect('/userdashboard');
   } catch (error) {
     toast.error('error');
@@ -64,7 +62,7 @@ const LoginUser = () => {
               />
             </svg>
             <input
-              class="pl-2 outline-none border-none"
+              class="pl-2 outline-none border-none text-black"
               type="text"
               name="UserID"
               id="UserID"
@@ -86,7 +84,7 @@ const LoginUser = () => {
               />
             </svg>
             <input
-              class="pl-2 outline-none border-none"
+              class="pl-2 outline-none border-none  text-black"
               type="Password"
               name="Password"
               id="Password"

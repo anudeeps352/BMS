@@ -14,7 +14,7 @@ const Wrapper = styled.article`
     align-items: center;
   }
   .main-icon {
-    width: 60px;
+    width: 100px;
     height: 60px;
     display: grid;
     place-items: center;

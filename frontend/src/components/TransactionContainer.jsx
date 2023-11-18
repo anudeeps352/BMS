@@ -1,10 +1,10 @@
 import React from 'react';
 import Wrapper from '../assets/wrappers/TransactionContainer';
-import transactiondata from '../utils/transactiondata';
 import Transaction from './Transaction';
 
-const TransactionContainer = () => {
-  if (transactiondata.length === 0) {
+const TransactionContainer = ({ Transactions }) => {
+  console.log(Transactions);
+  if (Transactions.length === 0) {
     return (
       <Wrapper>
         <h2>No Accounts to display</h2>
@@ -14,9 +14,9 @@ const TransactionContainer = () => {
   return (
     <Wrapper>
       <div className="transaction">
-        {transactiondata.map((transaction) => {
+        {Transactions.map((transaction) => {
           return (
-            <Transaction key={transaction.transactionid} {...transaction} />
+            <Transaction key={transaction.TransactionID} {...transaction} />
           );
         })}
       </div>

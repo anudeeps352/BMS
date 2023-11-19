@@ -1,13 +1,20 @@
 import React from 'react';
 import Wrapper from '../assets/wrappers/UserStats';
-import userstats from '../utils/userstats';
 import StatItem from './StatItem';
-const UserStats = () => {
+const UserStats = ({ Userdetails }) => {
   return (
     <Wrapper>
-      {userstats.map((item) => {
-        return <StatItem key={item.username} {...item} />;
-      })}
+      <StatItem
+        key={Userdetails.id}
+        Tag="Name"
+        Displayparam={Userdetails.Name}
+      />
+      <StatItem key={Userdetails.id} Tag="Age" Displayparam={Userdetails.Age} />
+      <StatItem
+        key={Userdetails.id}
+        Tag="Phone"
+        Displayparam={Userdetails.Phone}
+      />
     </Wrapper>
   );
 };

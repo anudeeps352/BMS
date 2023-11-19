@@ -10,7 +10,7 @@ const Wrapper = styled.article`
     padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--grey-100);
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr 1fr;
     align-items: center;
   }
   .main-icon {
@@ -75,6 +75,11 @@ const Wrapper = styled.article`
   }
   .edit-btn {
     margin-right: 0.5rem;
+  }
+  .right-side {
+    h6 {
+      margin: 0.5rem 0rem;
+    }
   }
 `;
 

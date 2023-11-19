@@ -18,6 +18,10 @@ const Transaction = ({
           <h5>From Account : {FromAccount}</h5>
           <p>To Account : {ToAccount}</p>
         </div>
+        <div className="right-side">
+          <h6>Amount : {Amount}</h6>
+          <h6>Date : {Date}</h6>
+        </div>
       </header>
     </Wrapper>
   );

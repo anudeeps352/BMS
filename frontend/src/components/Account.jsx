@@ -1,14 +1,14 @@
 import React from 'react';
 import Wrapper from '../assets/wrappers/Account';
 
-const Account = ({ accountno, type, balance }) => {
+const Account = ({ AccountNo, Type, Balance }) => {
   return (
     <Wrapper>
       <header>
-        <div className="main-icon">{type.charAt(0)}</div>
+        <div className="main-icon">{Type.charAt(0)}</div>
         <div className="info">
-          <h5>{accountno}</h5>
-          <p>{balance}</p>
+          <h5>{AccountNo}</h5>
+          <p>{Balance}</p>
         </div>
       </header>
     </Wrapper>

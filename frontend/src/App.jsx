@@ -15,7 +15,7 @@ import {
 import DashboardLayout from './pages/DashboardLayout';
 import { action as loginAction } from './pages/LoginUser';
 import { loader as transactionloader } from './pages/TransactionHistory';
-
+import { loader as userdetailsloader } from './pages/UserDetails';
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   document.body.classList.toggle('dark-theme', isDarkTheme);
@@ -50,6 +50,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <UserDetails />,
+            loader: userdetailsloader,
           },
           {
             path: 'loanapply',

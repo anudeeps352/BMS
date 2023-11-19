@@ -1,15 +1,13 @@
 import React from 'react';
 import Wrapper from '../assets/wrappers/StatItem';
 
-const StatItem = ({ username, phone, age }) => {
+const StatItem = ({ Tag, Displayparam }) => {
   return (
     <Wrapper>
+      <h5>{Tag}</h5>
       <header>
-        <span className="count">{username}</span>
-        <span className="count">{age}</span>
-        <span className="count">{phone}</span>
+        <span className="count">{Displayparam}</span>
       </header>
-      <h5></h5>
     </Wrapper>
   );
 };

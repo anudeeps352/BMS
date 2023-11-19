@@ -17,6 +17,11 @@ const links = [
     icon: <MdQueryStats />,
   },
   {
+    text: 'Loan History',
+    path: 'loanhistory',
+    icon: <MdQueryStats />,
+  },
+  {
     text: 'Fund Transfer',
     path: 'fundtransfer',
     icon: <ImProfile />,

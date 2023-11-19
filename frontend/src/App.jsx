@@ -13,6 +13,7 @@ import {
   PayLoan,
 } from './pages';
 import DashboardLayout from './pages/DashboardLayout';
+import LoanHistory from './pages/LoanHistory';
 import { action as loginAction } from './pages/LoginUser';
 import { loader as transactionloader } from './pages/TransactionHistory';
 import { loader as userdetailsloader } from './pages/UserDetails';
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
           {
             path: 'payloan',
             element: <PayLoan />,
+          },
+          {
+            path: 'loanhistory',
+            element: <LoanHistory />,
           },
         ],
       },

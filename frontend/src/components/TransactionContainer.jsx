@@ -3,7 +3,6 @@ import Wrapper from '../assets/wrappers/TransactionContainer';
 import Transaction from './Transaction';
 
 const TransactionContainer = ({ Transactions }) => {
-  console.log(Transactions);
   if (Transactions.length === 0) {
     return (
       <Wrapper>
@@ -11,17 +10,22 @@ const TransactionContainer = ({ Transactions }) => {
       </Wrapper>
     );
   }
-  return (
-    <Wrapper>
-      <div className="transaction">
-        {Transactions.map((transaction) => {
-          return (
-            <Transaction key={transaction.TransactionID} {...transaction} />
-          );
-        })}
-      </div>
-    </Wrapper>
-  );
+  if (Transactions[0].Amount === '...') {
+    return <></>;
+  }
+  {
+    return (
+      <Wrapper>
+        <div className="transaction">
+          {Transactions.map((transaction) => {
+            return (
+              <Transaction key={transaction.TransactionID} {...transaction} />
+            );
+          })}
+        </div>
+      </Wrapper>
+    );
+  }
 };
 
 export default TransactionContainer;

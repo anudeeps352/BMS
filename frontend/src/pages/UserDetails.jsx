@@ -10,7 +10,7 @@ export const loader = async () => {
   const data = { UserID: userid };
   try {
     const userdetails = await customFetch.get('/userdetails', { params: data });
-    console.log(userdetails.data);
+    console.log(userdetails.length === 0);
     return userdetails.data;
   } catch (error) {
     return error.response.data;

@@ -1,6 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+import customFetch from '../utils/customFetch';
+import { toast } from 'react-toastify';
+import { useNavigation, Form, useNavigate, redirect } from 'react-router-dom';
+import axios from 'axios';
+
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  console.log(formData);
+  const data = Object.fromEntries(formData);
+  console.log(data);
+
+  try {
+    const resp = await axios.post('http://localhost:5000/api/adminlogin', data);
+    toast.success('Login Successful');
+    localStorage.setItem('AdminID', data.AdminID);
+    return redirect('/admindashboard');
+  } catch (error) {
+    toast.error('error');
+    console.log(error.response.data);
+    return error;
+  }
+};
 
 const LoginAdmin = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
+  console.log('loginadmin');
+
   return (
     <div className=" h-screen md:flex">
       <div className="relative overflow-hidden md:flex w-1/2 invisible md:visible bg-gradient-to-tr from-cyan-500 to-blue-500 justify-around items-center ">
@@ -14,7 +40,7 @@ const LoginAdmin = () => {
         <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
       </div>
       <div className="flex md:w-1/2 justify-center py-10 items-center  bg-white ">
-        <form className="bg-white ">
+        <Form method="post" className="bg-white ">
           <h1 className="text-gray-800 font-bold text-6xl mb-3 ">
             Welcome Admin
           </h1>
@@ -37,7 +63,7 @@ const LoginAdmin = () => {
               />
             </svg>
             <input
-              class="pl-2 outline-none border-none"
+              class="pl-2 outline-none border-none text-black"
               type="text"
               name="AdminID"
               id="AdminID"
@@ -59,8 +85,8 @@ const LoginAdmin = () => {
               />
             </svg>
             <input
-              class="pl-2 outline-none border-none"
-              type="text"
+              class="pl-2 outline-none border-none  text-black"
+              type="Password"
               name="Password"
               id="Password"
               placeholder="Password"
@@ -70,10 +96,11 @@ const LoginAdmin = () => {
           <button
             type="submit"
             class="block w-full bg-cyan-500 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 transition-all hover:bg-blue-500"
+            disabled={isSubmitting}
           >
-            Login
+            {isSubmitting ? 'Logging in' : 'Log In'}
           </button>
-        </form>
+        </Form>
       </div>
     </div>
   );

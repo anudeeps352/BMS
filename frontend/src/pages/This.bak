@@ -1,0 +1,81 @@
+import axios from 'axios';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import {
+  Form,
+  useLoaderData,
+  useNavigation,
+  useSubmit,
+} from 'react-router-dom';
+import {
+  FormRowSelect,
+  SearchContainer,
+  TransactionContainer,
+} from '../components';
+import customFetch from '../utils/customFetch';
+const userid = localStorage.getItem('UserID');
+
+export const loader = async ({ request }) => {
+  const params = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries(),
+  ]);
+  console.log(params);
+  // const formData = await request.formData();
+  // const data = Object.fromEntries(formData);
+  // console.log(data);
+  try {
+    Transactions = await customFetch.get('/transactions', {
+      params,
+    });
+    return Transactions.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+const TransactionHistory = () => {
+  const [accounts, setaccounts] = useState([]);
+
+  useEffect(() => {
+    async function getaccounts() {
+      const request = await customFetch('/useraccounts', {
+        params: { UserID: userid },
+      });
+      setaccounts(request.data.Accounts);
+      console.log(request);
+      return request;
+    }
+    getaccounts();
+  }, []);
+  console.log(accounts);
+  const Transactions = useLoaderData();
+  console.log(Transactions.data);
+  return (
+    <>
+      <Form
+        className="form"
+        defaultValue={accounts[0]}
+        onChange={(e) => {
+          submit(e.currentTarget.form);
+        }}
+      >
+        <h4 className="form-title">Enter Account Number</h4>
+        <FormRowSelect
+          name="AccountNo"
+          labelText="AccountNo"
+          defaultValue={accounts[0]}
+          list={accounts}
+          onChange={(e) => {
+            submit(e.currentTarget.form);
+          }}
+        ></FormRowSelect>
+      </Form>
+      <TransactionContainer
+        Transactions={Transactions.Transactions}
+        Accounts={accounts}
+      ></TransactionContainer>
+    </>
+  );
+};
+
+export default TransactionHistory;
+// export const useTransactionContext = useContext(TransactionContext);

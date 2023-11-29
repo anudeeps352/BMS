@@ -14,6 +14,8 @@ export const action = async ({ request }) => {
     const resp = await axios.post('http://localhost:5000/api/userlogin', data);
     toast.success('Login Successful');
     localStorage.setItem('UserID', data.UserID);
+    console.log(resp.data);
+    localStorage.setItem('Accounts', JSON.stringify(resp.data));
     return redirect('/userdashboard');
   } catch (error) {
     toast.error('error');

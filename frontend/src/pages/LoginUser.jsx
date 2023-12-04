@@ -14,8 +14,11 @@ export const action = async ({ request }) => {
     const resp = await axios.post('http://localhost:5000/api/userlogin', data);
     toast.success('Login Successful');
     localStorage.setItem('UserID', data.UserID);
-    console.log(resp.data);
-    localStorage.setItem('Accounts', JSON.stringify(resp.data));
+    localStorage.setItem('Accounts', JSON.stringify(resp.data.AccountNo));
+    localStorage.setItem(
+      'LoanAccounts',
+      JSON.stringify(resp.data.LoanAccountNo)
+    );
     return redirect('/userdashboard');
   } catch (error) {
     toast.error('error');

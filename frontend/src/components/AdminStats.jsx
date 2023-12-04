@@ -1,5 +1,5 @@
 import React from 'react';
-import Wrapper from '../assets/wrappers/UserStats';
+import Wrapper from '../assets/wrappers/AdminStat';
 import StatItem from './StatItem';
 const AdminStats = ({ Admindetails }) => {
   return (
@@ -8,6 +8,11 @@ const AdminStats = ({ Admindetails }) => {
         key={Admindetails.id}
         Tag="Name"
         Displayparam={Admindetails.Name}
+      />
+      <StatItem
+        key={Admindetails.id}
+        Tag="AdminID"
+        Displayparam={Admindetails.AdminID}
       />
     </Wrapper>
   );

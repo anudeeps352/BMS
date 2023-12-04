@@ -17,20 +17,26 @@ import {
   PayLoanAdmin,
   Deposit,
   Withdraw,
+  CreateAdmin,
 } from './pages';
 import DashboardLayout from './pages/DashboardLayout';
 import LoanHistory from './pages/LoanHistory';
 import { action as loginAction } from './pages/LoginUser';
 import { action as adminloginAction } from './pages/LoginAdmin';
+import { action as fundtransferAction } from './pages/FundTransfer';
 import { loader as transactionloader } from './pages/TransactionHistory';
+import { action as createadminAction } from './pages/CreateAdmin';
+import { action as closeaccountAction } from './pages/CloseAccounts';
+import { loader as loanhistoryloader } from './pages/LoanHistory';
 import { loader as userdetailsloader } from './pages/UserDetails';
+import { loader as loanapproveloader } from './pages/ApproveLoans';
 import AdminDetails, {
   loader as admindetailsloader,
 } from './pages/AdminDetails';
 import AdminDashboardLayout from './pages/AdminDashboardLayout';
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-  document.body.classList.toggle('dark-theme', isDarkTheme);
+  document.body.classList.toggle('dark-theme', !isDarkTheme);
   return isDarkTheme;
 };
 
@@ -77,14 +83,16 @@ const router = createBrowserRouter([
           {
             path: 'fundtransfer',
             element: <FundTransfer />,
+            action: fundtransferAction,
           },
           {
-            path: 'payloan',
+            path: 'userpayloan',
             element: <PayLoan />,
           },
           {
             path: 'loanhistory',
             element: <LoanHistory />,
+            loader: loanhistoryloader,
           },
         ],
       },
@@ -102,12 +110,19 @@ const router = createBrowserRouter([
             element: <RegisterCustomer />,
           },
           {
+            path: 'createadmin',
+            element: <CreateAdmin />,
+            action: createadminAction,
+          },
+          {
             path: 'approveloans',
             element: <ApproveLoans />,
+            loader: loanapproveloader,
           },
           {
             path: 'closeaccounts',
             element: <CloseAccounts />,
+            action: closeaccountAction,
           },
           {
             path: 'payloan-admin',

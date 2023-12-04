@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/BigSidebar';
 import { useDashboardContext } from '../pages/DashboardLayout';
 import links from '../utils/links';
+import Logo from './Logo';
 const BigSidebar = () => {
   const { showSidebar } = useDashboardContext();
   return (
@@ -13,7 +14,9 @@ const BigSidebar = () => {
         }
       >
         <div className="content">
-          <header>Logo</header>
+          <header>
+            <Logo></Logo>
+          </header>
           <div className="nav-links">
             {links.map((link) => {
               const { text, path, icon } = link;

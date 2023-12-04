@@ -1,20 +1,37 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  border-radius: var(--border-radius);
-  width: 100%;
-  background: var(--background-secondary-color);
-  padding: 3rem 2rem 4rem;
+  margin-top: 4rem;
+  h2 {
+    text-transform: none;
+  }
+  & > h5 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .transactiondata {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  @media (min-width: 1120px) {
+    .transactiondata {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
   .form-title {
     margin-bottom: 2rem;
   }
   .form {
-    margin: 0;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     border-radius: 0;
     box-shadow: none;
-    padding: 0;
+    padding: 1rem;
     max-width: 100%;
-    width: 100%;
+    width: 50vw;
   }
   .form-row {
     margin-bottom: 0;
@@ -22,6 +39,7 @@ const Wrapper = styled.section`
   .form-center {
     display: grid;
     row-gap: 1rem;
+    width: 50vw;
   }
   .accountsection {
     margin-top: 2rem;
@@ -90,5 +108,4 @@ const Wrapper = styled.section`
     }
   }
 `;
-
 export default Wrapper;

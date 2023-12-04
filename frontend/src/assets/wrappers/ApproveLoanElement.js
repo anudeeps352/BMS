@@ -41,7 +41,8 @@ const Wrapper = styled.article`
   .content {
     padding: 1rem 1.5rem;
   }
-  .content-center {
+  ${
+    '' /* .content-center {
     display: grid;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
@@ -51,7 +52,16 @@ const Wrapper = styled.article`
     @media (min-width: 576px) {
       grid-template-columns: 1fr 1fr;
     }
+  } */
   }
+  .buttons {
+    display: grid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+
   .status {
     border-radius: var(--border-radius);
     text-transform: capitalize;

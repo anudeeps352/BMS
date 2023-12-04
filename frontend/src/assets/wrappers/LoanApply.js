@@ -3,13 +3,15 @@ import styled from 'styled-components';
 const Wrapper = styled.section`
   border-radius: var(--border-radius);
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background: var(--background-secondary-color);
   padding: 3rem 2rem 4rem;
   .form-title {
     margin-bottom: 2rem;
   }
   .form {
-    margin: 0;
+    margin: 0px;
     border-radius: 0;
     box-shadow: none;
     padding: 0;
@@ -22,6 +24,7 @@ const Wrapper = styled.section`
   .form-center {
     display: grid;
     row-gap: 1rem;
+    margin-bottom: 2rem;
   }
   .accountsection {
     margin-top: 2rem;
@@ -34,6 +37,10 @@ const Wrapper = styled.section`
     place-items: center;
   }
 
+  .btn {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
   .type-btn {
     margin-top: 2rem;
     margin-right: 2rem;

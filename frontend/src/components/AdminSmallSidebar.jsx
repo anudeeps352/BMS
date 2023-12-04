@@ -4,6 +4,7 @@ import { useAdminDashboardContext } from '../pages/AdminDashboardLayout';
 import Wrapper from '../assets/wrappers/SmallSidebar';
 import adminlinks from '../utils/adminlinks';
 import { NavLink } from 'react-router-dom';
+import Logo from './Logo';
 
 const AdminSmallSidebar = () => {
   const { showSidebar, toggleSidebar } = useAdminDashboardContext();
@@ -18,7 +19,9 @@ const AdminSmallSidebar = () => {
           <button type="button" className="close-btn" onClick={toggleSidebar}>
             <FaTimes></FaTimes>
           </button>
-          <header>Logo</header>
+          <header>
+            <Logo></Logo>
+          </header>
           <div className="nav-links">
             {adminlinks.map((link) => {
               const { text, path, icon } = link;

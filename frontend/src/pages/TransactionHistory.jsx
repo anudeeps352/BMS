@@ -8,9 +8,6 @@ import {
 } from '../components';
 import customFetch from '../utils/customFetch';
 
-// const [accounts, setaccounts] = useState([]);
-const accounts = JSON.parse(localStorage.getItem('Accounts')).AccountNo;
-accounts.unshift('...');
 export const loader = async ({ request }) => {
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
@@ -30,25 +27,13 @@ export const loader = async ({ request }) => {
 const TransactionHistory = () => {
   const Transactions = useLoaderData();
   const submit = useSubmit();
+  const accounts = JSON.parse(localStorage.getItem('Accounts'));
+  accounts.unshift('...');
 
   return (
     <>
-      {/* <Form className="form">
-        <h4 className="form-title">Enter Account Number</h4>
-        <FormRowSelect
-          name="AccountNo"
-          labelText="AccountNo"
-          list={accounts}
-          defaultValue={'...'}
-          onChange={(e) => {
-            submit(e.currentTarget.form);
-          }}
-        ></FormRowSelect>
-      </Form> */}
       <SearchContainer accounts={accounts}></SearchContainer>
-      <TransactionContainer
-        Transactions={Transactions.Transactions}
-      ></TransactionContainer>
+      <TransactionContainer Transactions={Transactions}></TransactionContainer>
     </>
   );
 };

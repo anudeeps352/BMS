@@ -14,4 +14,5 @@ export { default as ApproveLoans } from './ApproveLoans';
 export { default as CloseAccounts } from './CloseAccounts';
 export { default as PayLoanAdmin } from './PayLoanAdmin';
 export { default as Deposit } from './Deposit';
+export { default as CreateAdmin } from './CreateAdmin';
 export { default as Withdraw } from './Withdraw';

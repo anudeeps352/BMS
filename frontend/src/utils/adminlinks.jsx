@@ -3,7 +3,14 @@ import React from 'react';
 import { MdQueryStats } from 'react-icons/md';
 import { FaWpforms } from 'react-icons/fa';
 import { ImProfile } from 'react-icons/im';
+import { RiAdminFill } from 'react-icons/ri';
+import { MdDelete } from 'react-icons/md';
+import { MdPayments } from 'react-icons/md';
+import { FaListCheck } from 'react-icons/fa6';
 import { MdAdminPanelSettings } from 'react-icons/md';
+import { RiMoneyDollarBoxFill } from 'react-icons/ri';
+import { RiLuggageDepositFill } from 'react-icons/ri';
+import { IoIosCreate } from 'react-icons/io';
 
 const adminlinks = [
   {
@@ -14,32 +21,39 @@ const adminlinks = [
   {
     text: 'Register Customer',
     path: 'registercustomer',
-    icon: <MdQueryStats />,
-  },
-  {
-    text: 'Close Accounts',
-    path: 'closeaccounts',
-    icon: <ImProfile />,
+    icon: <IoIosCreate />,
   },
   {
     text: 'PayLoan',
     path: 'payloan-admin',
-    icon: <ImProfile />,
+    icon: <MdPayments />,
   },
   {
     text: 'Loan Approve',
     path: 'approveloans',
-    icon: <MdAdminPanelSettings />,
+    icon: <FaListCheck />,
   },
   {
     text: 'Withdraw',
     path: 'withdraw',
-    icon: <MdAdminPanelSettings />,
+    icon: <RiMoneyDollarBoxFill />,
   },
   {
     text: 'Deposit',
     path: 'deposit',
-    icon: <MdAdminPanelSettings />,
+    icon: <RiLuggageDepositFill />,
+  },
+
+  {
+    text: 'Create Admin',
+    path: 'createadmin',
+    icon: <RiAdminFill />,
+  },
+
+  {
+    text: 'Close Accounts',
+    path: 'closeaccounts',
+    icon: <MdDelete />,
   },
 ];
 

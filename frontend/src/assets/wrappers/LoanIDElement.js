@@ -3,16 +3,16 @@ import styled from 'styled-components';
 const Wrapper = styled.article`
   background: var(--background-secondary-color);
   border-radius: var(--border-radius);
-  display: grid;
-  grid-template-rows: 1fr auto;
+
   box-shadow: var(--shadow-2);
   header {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--grey-100);
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
   }
+
   .main-icon {
     width: 100px;
     height: 60px;
@@ -29,7 +29,6 @@ const Wrapper = styled.article`
   .info {
     h5 {
       margin-bottom: 0.5rem;
-      margin-right: 1px;
     }
     p {
       margin: 0;
@@ -77,10 +76,10 @@ const Wrapper = styled.article`
   .edit-btn {
     margin-right: 0.5rem;
   }
-  .right-side {
-    h6 {
-      margin: 0.5rem 0rem;
-    }
+  .button {
+    margin: 0.5rem 0rem 0.5px 300px;
+    width: 100px;
+    height: 40px;
   }
 `;
 

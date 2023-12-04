@@ -3,7 +3,7 @@ import { Form, useSubmit } from 'react-router-dom';
 import FormRow from './FormRow';
 import FormRowSelect from './FormRowSelect';
 
-const SearchContainer = ({ accounts }) => {
+const SearchLoanContainer = ({ accounts }) => {
   const submit = useSubmit();
   return (
     <Wrapper>
@@ -11,9 +11,10 @@ const SearchContainer = ({ accounts }) => {
         <h5 className="form-title">Select Account Number</h5>
         <div className="form-center">
           <FormRowSelect
-            labelText="AccountNo"
-            name="AccountNo"
+            labelText="LoanID"
+            name="LoanID"
             list={accounts}
+            defaultValue={accounts[0]}
             onChange={(e) => {
               submit(e.currentTarget.form);
             }}
@@ -23,4 +24,4 @@ const SearchContainer = ({ accounts }) => {
     </Wrapper>
   );
 };
-export default SearchContainer;
+export default SearchLoanContainer;

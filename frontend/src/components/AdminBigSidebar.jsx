@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/BigSidebar';
 import { useAdminDashboardContext } from '../pages/AdminDashboardLayout';
 import adminlinks from '../utils/adminlinks';
+import Logo from './Logo';
 const AdminBigSidebar = () => {
   const { showSidebar } = useAdminDashboardContext();
   return (
@@ -13,7 +14,9 @@ const AdminBigSidebar = () => {
         }
       >
         <div className="content">
-          <header>Logo</header>
+          <header>
+            <Logo></Logo>
+          </header>
           <div className="nav-links">
             {adminlinks.map((link) => {
               const { text, path, icon } = link;

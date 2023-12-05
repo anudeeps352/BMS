@@ -14,9 +14,13 @@ export const action = async ({ request }) => {
     const resp = await axios.post('http://localhost:5000/api/adminlogin', data);
     toast.success('Login Successful');
     localStorage.setItem('AdminID', data.AdminID);
+    localStorage.setItem(
+      'LoanAccounts',
+      JSON.stringify(resp.data.LoanAccountNo)
+    );
     return redirect('/admindashboard');
   } catch (error) {
-    toast.error('error');
+    toast.error(error.response.data.message);
     console.log(error.response.data);
     return error;
   }

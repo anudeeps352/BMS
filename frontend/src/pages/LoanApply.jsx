@@ -82,7 +82,7 @@ const LoanApply = () => {
             ></FormRow>
             <FormRow
               type="text"
-              labelText="Payments Remaining"
+              labelText="Duration(Number of Installments)"
               name="NumberofPayments"
               onChange={handlenumber}
             ></FormRow>

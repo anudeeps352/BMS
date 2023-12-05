@@ -11,6 +11,7 @@ import { MdAdminPanelSettings } from 'react-icons/md';
 import { RiMoneyDollarBoxFill } from 'react-icons/ri';
 import { RiLuggageDepositFill } from 'react-icons/ri';
 import { IoIosCreate } from 'react-icons/io';
+import { RiUserAddFill } from 'react-icons/ri';
 
 const adminlinks = [
   {
@@ -22,6 +23,16 @@ const adminlinks = [
     text: 'Register Customer',
     path: 'registercustomer',
     icon: <IoIosCreate />,
+  },
+  {
+    text: 'Create Account',
+    path: 'createaccount',
+    icon: <RiUserAddFill />,
+  },
+  {
+    text: 'Loan History',
+    path: 'adminloanhistory',
+    icon: <MdQueryStats />,
   },
   {
     text: 'PayLoan',

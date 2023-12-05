@@ -8,7 +8,7 @@ const SearchLoanContainer = ({ accounts }) => {
   return (
     <Wrapper>
       <Form className="form">
-        <h5 className="form-title">Select Account Number</h5>
+        <h5 className="form-title">Select LoanID</h5>
         <div className="form-center">
           <FormRowSelect
             labelText="LoanID"

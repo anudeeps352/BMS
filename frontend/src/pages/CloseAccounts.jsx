@@ -15,7 +15,7 @@ export const action = async ({ request }) => {
       'http://localhost:5000/api/closeaccount',
       data
     );
-    toast.success(resp.data.message);
+    toast.success('Account Closed Successfully');
     return redirect('/admindashboard');
   } catch (error) {
     toast.error(error.response.data.message);

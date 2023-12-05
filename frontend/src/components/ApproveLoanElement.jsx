@@ -57,8 +57,9 @@ const ApproveLoanElement = ({
       <header>
         <div className="main-icon">{'Loan'}</div>
         <div className="info">
+          <h5>Total Amount : {Amount}</h5>
           <h5>Fixed Amount : {FixedAmount}</h5>
-          <h5>Payments Remaining : {Duration}</h5>
+          <h5>Number of Payments : {Duration}</h5>
         </div>
         <div className="buttons">
           <button type="button" className="btn" onClick={handleapprove}>

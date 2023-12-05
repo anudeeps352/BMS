@@ -26,6 +26,9 @@ const Wrapper = styled.article`
     color: var(--white);
     margin-right: 2rem;
   }
+  .closed {
+    background: red;
+  }
   .info {
     h5 {
       margin-bottom: 0.5rem;

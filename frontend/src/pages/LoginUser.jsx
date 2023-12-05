@@ -21,7 +21,7 @@ export const action = async ({ request }) => {
     );
     return redirect('/userdashboard');
   } catch (error) {
-    toast.error('error');
+    toast.error(error.response.data.message);
     console.log(error.response.data);
     return error;
   }

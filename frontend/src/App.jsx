@@ -18,6 +18,8 @@ import {
   Deposit,
   Withdraw,
   CreateAdmin,
+  CreateAccount,
+  AdminLoanHistory,
 } from './pages';
 import DashboardLayout from './pages/DashboardLayout';
 import LoanHistory from './pages/LoanHistory';
@@ -28,6 +30,7 @@ import { loader as transactionloader } from './pages/TransactionHistory';
 import { action as createadminAction } from './pages/CreateAdmin';
 import { action as closeaccountAction } from './pages/CloseAccounts';
 import { loader as loanhistoryloader } from './pages/LoanHistory';
+import { loader as adminloanhistoryloader } from './pages/AdminLoanHistory';
 import { loader as userdetailsloader } from './pages/UserDetails';
 import { loader as loanapproveloader } from './pages/ApproveLoans';
 import AdminDetails, {
@@ -110,6 +113,10 @@ const router = createBrowserRouter([
             element: <RegisterCustomer />,
           },
           {
+            path: 'createaccount',
+            element: <CreateAccount />,
+          },
+          {
             path: 'createadmin',
             element: <CreateAdmin />,
             action: createadminAction,
@@ -118,6 +125,11 @@ const router = createBrowserRouter([
             path: 'approveloans',
             element: <ApproveLoans />,
             loader: loanapproveloader,
+          },
+          {
+            path: 'adminloanhistory',
+            element: <AdminLoanHistory />,
+            loader: adminloanhistoryloader,
           },
           {
             path: 'closeaccounts',

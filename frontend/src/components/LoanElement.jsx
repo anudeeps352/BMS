@@ -8,12 +8,15 @@ const LoanElement = ({
   PaymentsRemaining,
   FixedAmount,
   StartDate,
+  Status,
 }) => {
   return (
     <Wrapper>
       <header>
-        <div className="main-icon">{'Loan'}</div>
-        <div className="info">
+        <div className={Status === 'Closed' ? 'main-icon closed' : 'main-icon'}>
+          {Status}
+        </div>
+        <div className="info ">
           <h5>TotalAmount : {TotalAmount}</h5>
           <h5>AmountRemaining: {AmountRemaining}</h5>
         </div>

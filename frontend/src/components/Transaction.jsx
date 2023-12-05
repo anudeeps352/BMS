@@ -16,7 +16,7 @@ const Transaction = ({
         <div className="info">
           <h5>Transaction ID : {TransactionID}</h5>
           <h5>From Account : {FromAccount}</h5>
-          <p>To Account : {ToAccount}</p>
+          <h5>To Account : {ToAccount}</h5>
         </div>
         <div className="right-side">
           <h6>Amount : {Amount}</h6>

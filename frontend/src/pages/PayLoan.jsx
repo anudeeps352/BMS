@@ -51,7 +51,7 @@ const PayLoan = () => {
       const resp = await customFetch.post('/userpayloan', data);
       toast.success(resp.data.message);
     } catch (error) {
-      toast.error('error');
+      toast.error(error.response.data.message);
     }
     try {
       const formData = new FormData(loanid);
